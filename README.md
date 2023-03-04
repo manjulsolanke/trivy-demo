@@ -57,4 +57,37 @@ Licenses
   
   ```
   
+ ### Filesystem
+ 
+ ```bash
+ trivy fs <path>
+ 
+ 
+ ### Git Repository
+ 
+ ```bash 
+ trivy repo [YOUR_REPO_URL]
+ trivy repo --branch <branch-name> <repo-name>
+ trivy repo --commit <commit-hash> <repo-name>
+ trivy repo --tag <tag-name> <repo-name>
+ ```
+  
+  
+### Tar Files
+
+```bash
+   docker pull python:3.4-alpine
+   docker save python:3.4-alpine -o python:3.4-alpine.tar
+   trivy image --input python:3.4-alpine.tar
+   ```
+  
+  
+### k8s 
+
+```bash
+trivy k8s cluster --report summary # full cluster scan
+trivy k8s --namespace=kube-system --report=summary deploy,configmaps
+trivy k8s deployment <deployment-name> # Only deployment scan
+trivy k8s --report=summary deployment,configmaps
+```
   
