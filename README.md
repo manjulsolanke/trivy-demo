@@ -13,7 +13,7 @@ sudo apt-get install trivy
 The process above can be automated by the following script:
 
  ```bash 
-   sudo -i
+  sudo -i
   curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.38.0
   ```
  
@@ -61,7 +61,7 @@ Licenses
  
  ```bash
  trivy fs <path>
- 
+ ```
  
  ### Git Repository
  
@@ -76,9 +76,9 @@ Licenses
 ### Tar Files
 
 ```bash
-   docker pull python:3.4-alpine
-   docker save python:3.4-alpine -o python:3.4-alpine.tar
-   trivy image --input python:3.4-alpine.tar
+docker pull python:3.4-alpine
+docker save python:3.4-alpine -o python:3.4-alpine.tar
+trivy image --input python:3.4-alpine.tar
    ```
   
   
