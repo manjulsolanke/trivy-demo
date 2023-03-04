@@ -41,6 +41,9 @@ Secrets
 Licenses
 
 ###  Vulnerabilities
+
+Scan a container image 
+
   
   ```bash
   
@@ -53,17 +56,27 @@ Licenses
   trivy image --scanners secret python:3.4-alpine # secret check
   
   trivy image --vuln-type os   --severity CRITICAL python:3.4-alpine
-  
-  
   ```
   
+### Config
+
+Scan config files for misconfigurations
+
+```bash
+trivy config trivy-ci-test
+```
+  
  ### Filesystem
+ 
+ Scan local filesystem
  
  ```bash
  trivy fs <path>
  ```
  
  ### Git Repository
+ 
+ Scan a remote repository
  
  ```bash 
  trivy repo [YOUR_REPO_URL]
@@ -84,6 +97,8 @@ trivy image --input python:3.4-alpine.tar
   
 ### k8s 
 
+Scan a k8s cluster
+
 ```bash
 trivy k8s cluster --report summary # full cluster scan
 trivy k8s --namespace=kube-system --report=summary deploy,configmaps
@@ -92,6 +107,8 @@ trivy k8s --report=summary deployment,configmaps
 ```
   
 ### AWS
+
+Scan a aws resources
 
 ```bash
 trivy aws --region us-east-1
