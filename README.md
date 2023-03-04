@@ -91,3 +91,11 @@ trivy k8s deployment <deployment-name> # Only deployment scan
 trivy k8s --report=summary deployment,configmaps
 ```
   
+### AWS
+
+```bash
+trivy aws --region us-east-1
+trivy aws --service s3
+trivy aws --service s3 --service ec2 # --service s3,ec2 works too
+trivy aws --service s3 --arn arn:aws:s3:::example-bucket
+```
